@@ -55,7 +55,7 @@ def action_wrapper(hermes, intentMessage, conf):
             if verbose == 'True' or verbose == 'true':
                 result_sentence = "Führe das Programm " + spoken_name + " aus."
             else:
-                result_sentence = "OK"
+                result_sentence = "Starte " + spoken_name
         else:
             result_sentence = "Ich konnte den Programmnamen nicht finden!"
     except:
@@ -66,6 +66,6 @@ def action_wrapper(hermes, intentMessage, conf):
 
 if __name__ == "__main__":
     with Hermes("localhost:1883") as h:
-        h.subscribe_intent("ndy1982:executeProgram", subscribe_intent_callback) \
+        h.subscribe_intent("raider:executeProgram", subscribe_intent_callback) \
          .start()
 
